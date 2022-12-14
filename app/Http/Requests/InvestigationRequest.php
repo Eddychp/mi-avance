@@ -27,9 +27,11 @@ class InvestigationRequest extends FormRequest
             'date'=>"required",
             'start_date'=>"required",
             'end_date'=>"required",
-            'title'=>"required",
+            'path'=>"required",
             'area_id'=>"required",
             'category_id'=>"required",
+            'qualification'=>"required",
+
         ];
     }
 }

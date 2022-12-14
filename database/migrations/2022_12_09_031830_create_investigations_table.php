@@ -18,12 +18,12 @@ return new class extends Migration
             $table->date('date');
             $table->date('start_date');
             $table->date('end_date');
-            $table->string('title');
+            $table->string('path');
             $table->unsignedBigInteger('area_id');
             $table->unsignedBigInteger('category_id');
             $table->foreign('area_id')->references('id')->on('areas')->onDelete('cascade');
             $table->foreign('category_id')->references('id')->on('categories')->onDelete('cascade');
-
+            $table->string('qualification');
             $table->timestamps();
         });
     }

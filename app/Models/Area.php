@@ -11,4 +11,5 @@ class Area extends Model
     public function investigations (){
         return $this->hasMany(Investigation::class);
     }
+    protected $guarded =['id'];
 }

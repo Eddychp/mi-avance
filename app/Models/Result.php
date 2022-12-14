@@ -11,4 +11,5 @@ class Result extends Model
     public function investigation (){
         return $this->belongsTo(Investigation::class);
     }
+    protected $guarded =['id'];
 }

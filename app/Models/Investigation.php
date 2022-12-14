@@ -23,4 +23,5 @@ class Investigation extends Model
     public function area (){
         return $this->belongsTo(Area::class);
     }
+    protected $guarded =['id'];
 }
