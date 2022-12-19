@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AnnouncementsController;
 use App\Http\Controllers\AreaController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ContestantController;
@@ -29,3 +30,4 @@ Route::apiResource('/investigations',InvestigationController::class);
 Route::apiResource('/results',ResultController::class);
 Route::apiResource('/contestants',ContestantController::class);
 Route::apiResource('/observations',ObservationController::class);
+Route::apiResource('/announcements',AnnouncementsController::class);

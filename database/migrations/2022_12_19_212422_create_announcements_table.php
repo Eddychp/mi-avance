@@ -13,12 +13,11 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('contestants', function (Blueprint $table) {
+        Schema::create('announcements', function (Blueprint $table) {
             $table->id();
-
-            $table->unsignedBigInteger('investigation_id');
-            $table->foreign('investigation_id')->references('id')->on('investigations')->onDelete('cascade');
-            $table->string('type');
+            $table->string('name');
+            $table->date('start_date');
+            $table->date('end_date');
             $table->timestamps();
         });
     }
@@ -30,6 +29,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('contestants');
+        Schema::dropIfExists('announcements');
     }
 };

@@ -19,7 +19,7 @@ class ContestantFactory extends Factory
     public function definition()
     {
         return [
-            'user_id'=>User::all()->random()->id,
+
             'investigation_id'=>Investigation::all()->random()->id,
             'type'=>$this->faker->text(200),
         ];
