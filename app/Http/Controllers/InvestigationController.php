@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\InvestigationPostRequest;
 use App\Http\Requests\InvestigationRequest;
 use App\Models\Investigation;
 use Illuminate\Http\Request;
@@ -15,7 +16,7 @@ class InvestigationController extends Controller
     }
 
 
-    public function store(InvestigationRequest $request)
+    public function store(InvestigationPostRequest $request)
     {
         $investigations = Investigation::create($request->all());
         return response()->json([
@@ -32,7 +33,7 @@ class InvestigationController extends Controller
     }
 
 
-    public function update(InvestigationRequest $request, Investigation $investigations){
+    public function update(InvestigationPostRequest $request, Investigation $investigations){
         $investigations->update($request->all());
 
         return response()->json([
