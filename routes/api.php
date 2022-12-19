@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AnnouncementsController;
 use App\Http\Controllers\AreaController;
 use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\CategoryController;

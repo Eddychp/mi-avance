@@ -62,7 +62,5 @@ class User extends Authenticatable
         'profile_photo_url',
     ];
 
-    public function contestants (){
-        return $this->hasMany(Contestant::class);
-    }
+
 }

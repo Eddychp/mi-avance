@@ -22,9 +22,11 @@ class InvestigationFactory extends Factory
             'date'=>$this->faker->date(),
             'start_date'=>$this->faker->date(),
             'end_date'=>$this->faker->date(),
-            'title'=>$this->faker->text(),
+            'path'=>$this->faker->text(20),
             'area_id'=>Area::all()->random()->id,
             'category_id'=>Category::all()->random()->id,
-         ];
+            'qualification'=>$this->faker->text(),
+
+        ];
     }
 }

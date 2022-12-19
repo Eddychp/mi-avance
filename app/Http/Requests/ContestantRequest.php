@@ -24,7 +24,7 @@ class ContestantRequest extends FormRequest
     public function rules()
     {
         return [
-            'user_id'=>"required",
+
             'investigation_id'=>"required",
             'type'=>"required",
         ];

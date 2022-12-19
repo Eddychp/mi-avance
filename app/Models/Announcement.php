@@ -5,11 +5,8 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Category extends Model
+class Announcement extends Model
 {
     use HasFactory;
-    public function investigations (){
-        return $this->hasMany(Investigation::class);
-    }
     protected $guarded =['id'];
 }
