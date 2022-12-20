@@ -3,9 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\AnnouncementRequest;
-use App\Http\Requests\ResultRequest;
+
 use App\Models\Announcement;
-use App\Models\Result;
+
 use Illuminate\Http\Request;
 
 class AnnouncementsController extends Controller
@@ -27,25 +27,25 @@ class AnnouncementsController extends Controller
     }
 
 
-    public function show(Announcement $announcements)
+    public function show(Announcement $announcement)
     {
-        $announcements=Announcement::find($announcements);
-        return response()->json($announcements);
+        $announcement=Announcement::find($announcement);
+        return response()->json($announcement);
     }
 
 
-    public function update(AnnouncementRequest $request, Announcement $announcements){
-        $announcements->update($request->all());
+    public function update(AnnouncementRequest $request, Announcement $announcement){
+        $announcement->update($request->all());
 
         return response()->json([
             'message' => "record updated successfully!",
-            'announcements' => $announcements
+            'announcements' => $announcement
         ], 200);
     }
 
 
-    public function destroy(Announcement $announcements){
-        $announcements->delete();
+    public function destroy(Announcement $announcement){
+        $announcement->delete();
         return response()->json([
             'message' => "record deleted successfully!",
         ], 200);

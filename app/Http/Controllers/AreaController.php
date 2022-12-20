@@ -26,25 +26,25 @@ class AreaController extends Controller
     }
 
 
-    public function show(Area $areas)
+    public function show(Area $area)
     {
-        $areas=Area::find($areas);
-        return response()->json($areas);
+        $area=Area::find($area);
+        return response()->json($area);
     }
 
 
-    public function update(AreaRequest $request, Area $areas){
-        $areas->update($request->all());
+    public function update(AreaRequest $request, Area $area){
+        $area->update($request->all());
 
         return response()->json([
             'message' => "record updated successfully!",
-            'areas' => $areas
+            'areas' => $area
         ], 200);
     }
 
 
-    public function destroy(Area $areas){
-        $areas->delete();
+    public function destroy(Area $area){
+        $area->delete();
         return response()->json([
             'message' => "record deleted successfully!",
         ], 200);
