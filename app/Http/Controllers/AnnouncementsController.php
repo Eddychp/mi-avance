@@ -36,15 +36,22 @@ class AnnouncementsController extends Controller
 
     public function update(AnnouncementRequest $request, Announcement $announcement){
         $announcement->update($request->all());
+<<<<<<< HEAD
         return response()->json([
             'message' => "record updated successfully!",
             'announcements' => $announcement
+=======
+
+        return response()->json([
+            'message' => "record updated successfully!",
+            'announcement' => $announcement
+>>>>>>> 08dfa07482f26aedec1acc3259f5d2843a327bb8
         ], 200);
     }
 
 
-    public function destroy(Announcement $announcements){
-        $announcements->delete();
+    public function destroy(Announcement $announcement){
+        $announcement->delete();
         return response()->json([
             'message' => "record deleted successfully!",
         ], 200);

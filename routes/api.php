@@ -36,5 +36,9 @@ Route::apiResource('/observations',ObservationController::class);
 Route::apiResource('/students', StudentController::class);
 Route::apiResource('/articles', ArticleController::class);
 Route::apiResource('/templates', TemplateController::class);
+<<<<<<< HEAD
 Route::apiResource('/investigations', InvestigationController::class);
 
+=======
+Route::apiResource('/announcements', AnnouncementsController::class);
+>>>>>>> 08dfa07482f26aedec1acc3259f5d2843a327bb8
