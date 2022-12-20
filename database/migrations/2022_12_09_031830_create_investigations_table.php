@@ -16,14 +16,14 @@ return new class extends Migration
         Schema::create('investigations', function (Blueprint $table) {
             $table->id();
             $table->date('date');
-            $table->date('start_date');
-            $table->date('end_date');
-            $table->string('path');
-            $table->unsignedBigInteger('area_id');
-            $table->unsignedBigInteger('category_id');
-            $table->foreign('area_id')->references('id')->on('areas')->onDelete('cascade');
-            $table->foreign('category_id')->references('id')->on('categories')->onDelete('cascade');
-            $table->string('qualification');
+            $table->string('email');
+            $table->string('phone');
+            $table->string('school');
+            $table->enum('category', ['Empirico', 'Baner', 'Revisión']);
+            $table->unsignedBigInteger('student_id');
+            $table->foreign('student_id')->references('id')->on('students')->onDelete('cascade');
+            $table->unsignedBigInteger('article_id')->nullable();
+            $table->foreign('article_id')->references('id')->on('articles')->onDelete('cascade');
             $table->timestamps();
         });
     }

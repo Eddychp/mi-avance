@@ -8,6 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class Investigation extends Model
 {
     use HasFactory;
+
+    protected $guarded=['id'];
+
     public function results (){
         return $this->hasMany(Result::class);
     }
@@ -23,5 +26,14 @@ class Investigation extends Model
     public function area (){
         return $this->belongsTo(Area::class);
     }
-    protected $guarded =['id'];
+    // Relación de 1 * 1
+    public function student(){
+        return $this->hasOne(Student::class);
+    }
+
+    public function article(){
+        return $this->hasOne(Article::class);
+    }
+
+
 }

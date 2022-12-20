@@ -2,11 +2,14 @@
 
 use App\Http\Controllers\AnnouncementsController;
 use App\Http\Controllers\AreaController;
+use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ContestantController;
 use App\Http\Controllers\InvestigationController;
 use App\Http\Controllers\ObservationController;
 use App\Http\Controllers\ResultController;
+use App\Http\Controllers\StudentController;
+use App\Http\Controllers\TemplateController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -30,4 +33,7 @@ Route::apiResource('/investigations',InvestigationController::class);
 Route::apiResource('/results',ResultController::class);
 Route::apiResource('/contestants',ContestantController::class);
 Route::apiResource('/observations',ObservationController::class);
-Route::apiResource('/announcements',AnnouncementsController::class);
+Route::apiResource('/students', StudentController::class);
+Route::apiResource('/articles', ArticleController::class);
+Route::apiResource('/templates', TemplateController::class);
+
