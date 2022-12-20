@@ -26,25 +26,25 @@ class InvestigationController extends Controller
     }
 
 
-    public function show(Investigation $investigations)
+    public function show(Investigation $investigation)
     {
-        $investigations=Investigation::find($investigations);
-        return response()->json($investigations);
+        $investigation=Investigation::find($investigation);
+        return response()->json($investigation);
     }
 
 
-    public function update(InvestigationPostRequest $request, Investigation $investigations){
-        $investigations->update($request->all());
+    public function update(InvestigationPostRequest $request, Investigation $investigation){
+        $investigation->update($request->all());
 
         return response()->json([
             'message' => "record updated successfully!",
-            'areas' => $investigations
+            'areas' => $investigation
         ], 200);
     }
 
 
-    public function destroy(Investigation $areas){
-        $areas->delete();
+    public function destroy(Investigation $investigation){
+        $investigation->delete();
         return response()->json([
             'message' => "record deleted successfully!",
         ], 200);
