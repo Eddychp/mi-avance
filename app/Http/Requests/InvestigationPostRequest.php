@@ -28,7 +28,8 @@ class InvestigationPostRequest extends FormRequest
             'email'=>'required',
             'phone'=>'required',
             'school'=>'required',
-            'category'=>'required'
+            'category'=>'required',
+            'path'=>'required'
         ];
     }
 }

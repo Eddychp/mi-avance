@@ -30,13 +30,12 @@ class StudentController extends Controller
 
     public function update(StudentPostRequest $request, Student $student){
         $student->update($request->all());
-
         return response()->json([
             'message' => "record updated successfully!",
             'student' => $student
         ], 200);
     }
-
+    
     public function destroy(Student $student){
         $student->delete();
         return response()->json([

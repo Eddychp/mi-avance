@@ -15,15 +15,14 @@ return new class extends Migration
     {
         Schema::create('investigations', function (Blueprint $table) {
             $table->id();
-            $table->date('date');
+            $table->string('date');
             $table->string('email');
             $table->string('phone');
             $table->string('school');
-            $table->enum('category', ['Empirico', 'Baner', 'Revisión']);
-            $table->unsignedBigInteger('student_id');
+            $table->string('category');
+            $table->string('path');
+            $table->unsignedBigInteger('student_id')->nullable();
             $table->foreign('student_id')->references('id')->on('students')->onDelete('cascade');
-            $table->unsignedBigInteger('article_id')->nullable();
-            $table->foreign('article_id')->references('id')->on('articles')->onDelete('cascade');
             $table->timestamps();
         });
     }

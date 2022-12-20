@@ -12,7 +12,4 @@ class Article extends Model
     protected $guarded=['id'];
 
     //Relacion de 1 a 1 inveresa
-    public function investigation(){
-        return $this->hasOne(Investigation::class);
-    }
 }

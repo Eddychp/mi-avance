@@ -25,7 +25,7 @@ class TemplateController extends Controller
         $template = request()->all();
         if ($request->hasFile('file')) {
 
-            $destination_path = 'public/templates';
+            $destination_path = 'public';
             $file = $request->file('file');
             $file_name = $file->getClientOriginalName();
             $path = $request->file('file')->storeAs($destination_path, $file_name);

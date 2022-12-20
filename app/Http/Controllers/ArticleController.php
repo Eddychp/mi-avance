@@ -24,13 +24,13 @@ class ArticleController extends Controller
     public function store(Request $request)
     {
         $article = request()->all();
-        if ($request->hasFile('file')) {
+        if ($request->hasFile('path')) {
 
             $destination_path = 'public';
-            $file = $request->file('file');
+            $file = $request->file('path');
             $file_name = $file->getClientOriginalName();
-            $path = $request->file('file')->storeAs($destination_path, $file_name);
-            $article['file'] = $file_name;
+            $path = $request->file('path')->storeAs($destination_path, $file_name);
+            $article['path'] = $file_name;
         }
         Article::create($article);
         return response()->json([

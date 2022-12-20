@@ -24,7 +24,7 @@ class ArticlePostRequest extends FormRequest
     public function rules()
     {
         return [
-            'file'=>'required'
+            'path'=>'required'
         ];
     }
 }

@@ -31,9 +31,4 @@ class Investigation extends Model
         return $this->hasOne(Student::class);
     }
 
-    public function article(){
-        return $this->hasOne(Article::class);
-    }
-
-
 }

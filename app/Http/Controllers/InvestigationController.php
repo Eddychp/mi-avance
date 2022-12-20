@@ -11,29 +11,37 @@ class InvestigationController extends Controller
 {
     public function index()
     {
-        $investigations=Investigation::all();
+        $investigations = Investigation::all();
         return response()->json($investigations);
     }
 
 
-    public function store(InvestigationPostRequest $request)
+    public function store(Request $request)
     {
-        $investigations = Investigation::create($request->all());
+        $investigation = request()->all();
+        if ($request->hasFile('path')) {
+
+            $destination_path = 'public/';
+            $file = $request->file('path');
+            $file_name = $file->getClientOriginalName();
+            $path = $request->file('path')->storeAs($destination_path, $file_name);
+            $investigation['path'] = $file_name;
+        }
+        Investigation::create($investigation);
         return response()->json([
-            'message'=> "record saved successfully",
-            'investigations' => $investigations
+            'message' => "record saved successfully!",
+            'investigation' => $investigation
         ], 200);
     }
 
-
     public function show(Investigation $investigations)
     {
-        $investigations=Investigation::find($investigations);
+        $investigations = Investigation::find($investigations);
         return response()->json($investigations);
     }
 
-
-    public function update(InvestigationPostRequest $request, Investigation $investigations){
+    public function update(InvestigationPostRequest $request, Investigation $investigations)
+    {
         $investigations->update($request->all());
 
         return response()->json([
@@ -41,10 +49,8 @@ class InvestigationController extends Controller
             'areas' => $investigations
         ], 200);
     }
-
-
-    public function destroy(Investigation $areas){
-        $areas->delete();
+    public function destroy(Investigation $investigation){
+        $investigation->delete();
         return response()->json([
             'message' => "record deleted successfully!",
         ], 200);

@@ -34,12 +34,11 @@ class AnnouncementsController extends Controller
     }
 
 
-    public function update(AnnouncementRequest $request, Announcement $announcements){
-        $announcements->update($request->all());
-
+    public function update(AnnouncementRequest $request, Announcement $announcement){
+        $announcement->update($request->all());
         return response()->json([
             'message' => "record updated successfully!",
-            'announcements' => $announcements
+            'announcements' => $announcement
         ], 200);
     }
 
