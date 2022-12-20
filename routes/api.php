@@ -36,4 +36,4 @@ Route::apiResource('/observations',ObservationController::class);
 Route::apiResource('/students', StudentController::class);
 Route::apiResource('/articles', ArticleController::class);
 Route::apiResource('/templates', TemplateController::class);
-
+Route::apiResource('/announcements', AnnouncementsController::class);

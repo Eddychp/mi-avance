@@ -3,9 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\AnnouncementRequest;
-
+use App\Http\Requests\ResultRequest;
 use App\Models\Announcement;
-
+use App\Models\Result;
 use Illuminate\Http\Request;
 
 class AnnouncementsController extends Controller
@@ -27,10 +27,10 @@ class AnnouncementsController extends Controller
     }
 
 
-    public function show(Announcement $announcement)
+    public function show(Announcement $announcements)
     {
-        $announcement=Announcement::find($announcement);
-        return response()->json($announcement);
+        $announcements=Announcement::find($announcements);
+        return response()->json($announcements);
     }
 
 
@@ -39,7 +39,7 @@ class AnnouncementsController extends Controller
 
         return response()->json([
             'message' => "record updated successfully!",
-            'announcements' => $announcement
+            'announcement' => $announcement
         ], 200);
     }
 
